@@ -16,6 +16,17 @@ commands here
 
 Here you should say what actually happens when you execute the code above.
 
+
+### Dependencies
+
+1. Docker is used to create a container for Postgres image on port 5432
+
+2. Postbird is GUI client for Postgres (postgres//docker)
+
+3. Sequelize is a ORM for SQL databases
+
+4. Sequelize-cli is used to generate migrations, execute migrations
+
 ## Developing
 
 ### Built With
@@ -84,7 +95,8 @@ Give an example
 
 ## Style guide
 
-Explain your code style and show how to check it.
+- Eslint (Standard)
+- Prettier
 
 ## Api Reference
 
