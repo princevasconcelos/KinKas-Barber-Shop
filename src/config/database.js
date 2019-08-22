@@ -1,5 +1,7 @@
 // Sequelize configuration to postgres
 
+// is used in .sequelizerc and ../database/index.js
+
 module.exports = {
   dialect: 'postgres',
   host: 'localhost',
