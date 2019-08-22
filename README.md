@@ -21,6 +21,12 @@ Here you should say what actually happens when you execute the code above.
 
 1. Docker is used to create a container for Postgres image on port 5432
 
+```
+https://docs.docker.com/install/linux/linux-postinstall/
+https://hub.docker.com/_/postgres
+https://electronjs.org/apps/postbird
+```
+
 2. Postbird is GUI client for Postgres (postgres//docker)
 
 3. Sequelize is a ORM for SQL databases
