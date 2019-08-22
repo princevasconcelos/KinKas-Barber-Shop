@@ -33,6 +33,8 @@ https://electronjs.org/apps/postbird
 
 4. Sequelize-cli is used to generate migrations, execute migrations
 
+5. Sucrase is a faster alternative to babels transpiler
+
 ## Developing
 
 ### Built With
