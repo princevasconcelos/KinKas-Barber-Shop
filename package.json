@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/server.js",
+    "migrate": "sequelize db:migrate",
+    "migration:create-user": "sequelize migration:create --name=create-user",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
