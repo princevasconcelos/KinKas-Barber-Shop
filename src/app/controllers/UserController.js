@@ -1,3 +1,5 @@
+import { hash } from 'bcrypt';
+
 import User from '../models/User';
 
 class UserController {
