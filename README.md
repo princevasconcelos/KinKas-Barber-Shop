@@ -35,6 +35,8 @@ https://electronjs.org/apps/postbird
 
 5. Sucrase is a faster alternative to babels transpiler
 
+6. Multer can handle archives(photos) sent to our server through multipart/form-data
+
 ## Developing
 
 ### Built With
@@ -114,7 +116,7 @@ If the api is external, link to api documentation. If not describe your api incl
 ## Database
 
 Explaining what database (and version) has been used. Provide download links.
-Documents your database design and schemas, relations etc... 
+Documents your database design and schemas, relations etc...
 
 ## Licensing
 

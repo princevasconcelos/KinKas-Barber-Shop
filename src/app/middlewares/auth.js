@@ -4,8 +4,8 @@ import { promisify } from 'util';
 import authConfig from '../../config/auth';
 
 export default async (req, res, next) => {
-  const authHeader = req.headers.autorization;
-
+  const authHeader = req.headers.authorization;
+  console.log(req.headers.authorization);
   if (!authHeader) {
     return res.status(401).json({
       error: 'Token not provided',
