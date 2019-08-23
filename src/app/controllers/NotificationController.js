@@ -1,5 +1,5 @@
 import User from '../models/User';
-import Notifications from '../schemas/Notifications';
+import Notification from '../schemas/NotificationSchema';
 
 class NotificationController {
   async index(req, res) {
@@ -16,13 +16,27 @@ class NotificationController {
       });
     }
 
-    const notification = await Notifications.find({
+    const notification = await Notification.find({
       user: req.userId,
     })
       .sort({
         createdAt: 'desc',
       })
       .limit(20);
+
+    return res.json(notification);
+  }
+
+  async update(req, res) {
+    const notification = await Notification.findByIdAndUpdate(
+      req.params.id,
+      {
+        read: true,
+      },
+      {
+        new: true,
+      }
+    );
 
     return res.json(notification);
   }
