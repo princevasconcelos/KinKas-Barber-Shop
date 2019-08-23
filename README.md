@@ -11,7 +11,8 @@ A quick introduction of the minimal setup you need to get a hello world up &
 running.
 
 ```shell
-commands here
+
+docker run --name mongobarber -p 27017:27017 -d -t mongo
 ```
 
 Here you should say what actually happens when you execute the code above.
