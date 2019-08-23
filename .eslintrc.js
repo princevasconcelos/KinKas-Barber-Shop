@@ -1,16 +1,18 @@
 module.exports = {
   env: {
     es6: true,
-    node: true
+    node: true,
   },
-  extends: ["standard", "plugin:prettier/recommended"],
+  extends: ['standard', 'plugin:prettier/recommended'],
   globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: "module"
+    sourceType: 'module',
   },
-  rules: {}
+  rules: {
+    camelcase: 0,
+  },
 };
