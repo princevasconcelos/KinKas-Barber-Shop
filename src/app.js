@@ -3,9 +3,15 @@ import path from 'path';
 import * as Sentry from '@sentry/node';
 
 /**
+ * deixa as mensagens de error mais bonitas
+ */
+import Youch from 'youch';
+
+/**
  * Por padrão, o node nao envia os errros dentro do async/await
  * Pra funcionar, precisa adicionar essa lib
  * Usada para enviar os erros pro sentry
+ * essa lib precisa ser importanda antes das rotas
  */
 import 'express-async-errors';
 
@@ -37,6 +43,15 @@ class App {
   routes() {
     this.server.use(routes);
     this.server.use(Sentry.Handlers.errorHandler());
+    this.exceptionHandler();
+  }
+
+  exceptionHandler() {
+    this.server.use(async (err, req, res, next) => {
+      const errors = await new Youch(err, req).toJSON();
+
+      return res.status(500).json(errors);
+    });
   }
 }
 
