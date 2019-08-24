@@ -1,6 +1,7 @@
 ![Logo of the project](./images/logo.sample.png)
 
 # Kinkas Barber Shop &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
+
 > Additional information or tag line
 
 This project servers an API of barber shop.
@@ -11,12 +12,16 @@ A quick introduction of the minimal setup you need to get a hello world up &
 running.
 
 ```shell
-
 docker run --name mongobarber -p 27017:27017 -d -t mongo
 ```
 
-Here you should say what actually happens when you execute the code above.
+troubles
 
+```
+stop redis: /etc/init.d/redis-server stop
+```
+
+Here you should say what actually happens when you execute the code above.
 
 ### Dependencies
 
@@ -38,14 +43,17 @@ https://electronjs.org/apps/postbird
 
 6. Multer can handle archives(photos) sent to our server through multipart/form-data
 
+7. Bee Queue: background jobs list for node
+
 ## Developing
 
 ### Built With
+
 List main libraries, frameworks used including versions (React, Angular etc...)
 
 ### Prerequisites
-What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
 
+What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
 
 ### Setting up Dev
 
@@ -75,6 +83,7 @@ Here again you should state what actually happens when the code above gets
 executed.
 
 ### Deploying / Publishing
+
 give instructions on how to build and release a new version
 In case there's some step you have to take that publishes this project to a
 server, this is the right time to state it.
@@ -88,7 +97,6 @@ And again you'd need to tell what the previous code actually does.
 ## Versioning
 
 We can maybe use [SemVer](http://semver.org/) for versioning. For the versions available, see the [link to tags on this repository](/tags).
-
 
 ## Configuration
 
@@ -112,7 +120,6 @@ Give an example
 ## Api Reference
 
 If the api is external, link to api documentation. If not describe your api including authentication methods as well as explaining all the endpoints with their required parameters.
-
 
 ## Database
 
