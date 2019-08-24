@@ -1,6 +1,8 @@
 import * as Yup from 'yup';
 import { startOfHour, parseISO, isBefore, format, subHours } from 'date-fns';
 import pt from 'date-fns/locale/pt';
+import { format } from 'date-fns'
+
 
 import User from '../models/User';
 import Appointment from '../models/Appointment';
@@ -130,6 +132,11 @@ class AppointmentController {
           as: 'provider',
           attributes: ['name', 'email'],
         },
+        {
+          model: User,
+          as: 'user',
+          attributes: ['name'],
+        },
       ],
     });
 
@@ -151,13 +158,18 @@ class AppointmentController {
 
     await appointment.save();
 
-    const rrrr = await Mail.sendMail({
+    await Mail.sendMail({
       to: `${appointment.provider.name} <${appointment.provider.email}>`,
       subject: 'Agendamento cancelado',
-      text: 'Você tem um novo cancelamento',
-    });
-
-    console.log(rrrr);
+      template: 'cancelation',
+      context: {
+        provider: appointment.provider.name,
+        user: appointment.user.name,
+        date: format(appointment.date, "dd 'de' MMMM', às 'H:mm'h'", {
+          locale: pt,
+        })
+      },
+    }).catch(err => console.log(err));
 
     return res.json(appointment);
   }
